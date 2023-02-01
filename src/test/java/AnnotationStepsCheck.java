@@ -1,5 +1,7 @@
+import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
 
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static org.openqa.selenium.By.linkText;
@@ -26,6 +28,11 @@ public class AnnotationStepsCheck {
     @Step("Open the 'Issues' tab")
     public void openIssuesTab() {
         $("#issues-tab").click();
+    }
+
+    @Step("Check existence of Issue №")
+    public void shouldSeeIssueWithNumber(int issue) {
+        $(withText("#" + issue)).should(Condition.exist);
     }
 }
 
