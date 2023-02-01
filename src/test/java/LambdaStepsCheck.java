@@ -45,6 +45,7 @@ public class LambdaStepsCheck {
         steps.searchForRepository(REPOSITORY);
         steps.clickOnRepositoryLink(REPOSITORY);
         steps.openIssuesTab();
+        steps.shouldSeeIssueWithNumber(ISSUE);
     }
 }
 
